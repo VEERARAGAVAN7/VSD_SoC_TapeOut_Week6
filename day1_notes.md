@@ -254,6 +254,7 @@ https://github.com/efabless/openlane2
 ```
 ### 🔹 Steps to Characterize Synthesis Results  
 Characterization involves analyzing cell timing, area, and power data post-synthesis to verify correctness.  
+
 ![ReportCat](Screenshots/ReportCat.jpeg)  
 ---
 
