@@ -168,7 +168,7 @@ Explore folders like `designs/`, `pdks/`, and `flow/` to understand configuratio
 
 ### 🔹 Design Preparation Step  
 The design prep step sets up all required files for synthesis and physical design.  
-![OpenLANE Directory2](Screenshots/openlane2.png)  
+![OpenLANE Directory2](Screenshots/openlane2.jpeg)  
 
 ### 🔹 Review Files After Design Prep and Run Synthesis  
 After preparation, you can verify generated netlists, logs, and synthesis reports.  
@@ -188,8 +188,9 @@ Percentage\ of\ DFF's = Flop\ Ratio * 100
 ```
 
 * All day 1 logs, reports and results can be found in following run folder:
+'''
 
-[Section 1 Run - 15-03_15-51](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/tree/main/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/15-03_15-51)
+'''
 
 #### 1. Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
 
@@ -222,21 +223,19 @@ exit
 # Exit from OpenLANE flow docker sub-system
 exit
 ```
-![Synthesis_Directory](Screenshots/Synthesis_Directory.png)  
-
 
 Screenshots of running each commands
 
-![1](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/d19f6d0f-16f8-4e79-aa5a-f2a34b9fb203)
-![2](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/5e03c8ca-8c7f-4579-a7bc-10161007910e)
-![3](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/5f196a31-059e-4192-a208-8a15ba1a0dd7)
+![Synthesis1](Screenshots/Synthesis1.jpeg)  
+![Synthesis2](Screenshots/Synthesis2.jpeg)  
+
 
 #### 2. Calculate the flop ratio.
 
 Screenshots of synthesis statistics report file with required values highlighted
 
-![Screenshot from 2024-03-15 22-02-42](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/9280fefc-80b2-44ef-af34-ef3bddd3c14e)
-![Screenshot from 2024-03-15 22-03-39](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/3275f46c-19d7-42c5-8984-96d455f6e09b)
+![SynReport1](Screenshots/SynReport1.jpeg)  
+![SynReport2](Screenshots/SynReport2.jpeg)  
 
 Calculation of Flop Ratio and DFF % from synthesis statistics report file
 
