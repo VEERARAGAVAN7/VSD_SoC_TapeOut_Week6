@@ -27,18 +27,18 @@
 ### 🔹 Introduction to QFN-48 Package, Chip, Pads, Core, Die, and IPs  
 In any embedded board, what we usually call a “chip” is actually the **package** — a protective layer over the actual silicon die. The **chip** lies at the center of the package, connected to it through **wire bonding**.  
 
-![Package Example](images/package_example.png)  
+![Package Example](Screenshots/package.png)  
 
 Inside the chip:  
 - **Pads** handle all external connections.  
 - The **Core** contains the logic circuits.  
 - Both pads and core together form the **Die**, the basic manufacturing unit of a chip.  
 
-![Chip Structure](images/chip_structure.png)  
+![Chip Structure](Screenshots/chip_structure.png)  
 
 **Foundries** manufacture chips. Their specialized design blocks are called **Foundry IPs**, while reusable logic blocks are known as **Macros**.  
 
-![Foundry IPs and Macros](images/foundry_ip_macro.png)  
+![Foundry IPs and Macros](Screenshots/foundry_ip_macro.png)  
 
 ---
 
@@ -49,7 +49,7 @@ It first compiles into **RISC-V assembly instructions (ISA)**, which are then co
 
 The **RISC-V ISA (Reduced Instruction Set Computing – V)** defines how the software communicates with the hardware.  
 
-![RISC-V ISA Flow](images/riscv_isa_flow.png)  
+![RISC-V ISA Flow](Screenshots/riscv_isa_flow.png)  
 
 Finally, the **RTL** (Hardware Description Language) implements these instructions, and through the **PnR (Place and Route)** process, we reach the **final GDSII layout** ready for fabrication.  
 
@@ -64,7 +64,7 @@ When an application (like a stopwatch app) runs on hardware, several layers are 
    - Includes **OS**, **Compiler**, and **Assembler**  
 3. **Hardware** → Executes the binary code  
 
-![Software to Hardware Layers](images/software_to_hardware_layers.png)  
+![Software to Hardware Layers](Screenshots/software_to_hardware_layers.png)  
 
 Example flow for a stopwatch app on a RISC-V core:  
 
@@ -74,14 +74,14 @@ Example flow for a stopwatch app on a RISC-V core:
 - RTL synthesized → Gate-level netlist  
 - Fabricated into the chip  
 
-![Stopwatch Flow Example](images/stopwatch_flow.png)  
+![Stopwatch Flow Example](Screenshots/stopwatch_flow.png)  
 
 This course covers three main parts:  
 1. **RISC-V ISA**  
 2. **RTL and Synthesis of RISC-V-based CPU Core (PicoRV32)**  
 3. **Physical Design Implementation of PicoRV32**  
 
-![Course Flow Overview](images/course_flow.png)  
+![Course Flow Overview](Screenshots/course_flow.png)  
 
 ---
 
@@ -94,15 +94,15 @@ For open-source ASIC design, three major enablers are required:
 2. **EDA Tools**  
 3. **PDK Data (Process Design Kit)**  
 
+![ASIC Design](Screenshots/ASIC_design.png)  
+
 Initially, chip design and fabrication were tightly coupled. In 1979, **Lynn Conway** and **Carver Mead** revolutionized this by separating **design** and **fabrication**, introducing structured design rules and the concept of **fabless companies**.  
 
-![VLSI History](images/vlsi_history.png)  
+![VLSI History](Screenshots/vlsi_history.png)  
 
 The interface between design and fabrication became the **Process Design Kit (PDK)** — containing device models, libraries, and design rules.  
 
 Google’s collaboration with **SkyWater** led to the release of the first **open-source PDK (Sky130)** in June 2020.  
-
-![Sky130 PDK](images/sky130_pdk.png)  
 
 ---
 
@@ -110,11 +110,11 @@ Google’s collaboration with **SkyWater** led to the release of the first **ope
 
 The **ASIC Design Flow** takes a design from **RTL → GDSII** (fabrication layout format).  
 
-![ASIC Flow](images/asic_flow.png)  
+![ASIC Flow](Screenshots/asic_flow.png)  
 
 **Synthesis** converts RTL code into gate-level circuits using **Standard Cell Libraries (SCLs)**, producing a **netlist**.  
 
-![Synthesis Flow](images/synthesis_flow.png)  
+![Synthesis Flow](Screenshots/synthesis_flow.png)  
 
 Each standard cell has multiple views:  
 - **Liberty View (.lib)** – Timing & power data  
@@ -122,7 +122,6 @@ Each standard cell has multiple views:
 - **SPICE/CDL View** – Transistor-level netlist  
 - **Layout View (GDSII, LEF)** – Physical layout  
 
-![Standard Cell Views](images/standard_cell_views.png)  
 
 ---
 
@@ -130,7 +129,7 @@ Each standard cell has multiple views:
 
 **OpenLANE** is an open-source ASIC design automation flow developed for **Sky130 PDK**. It integrates multiple EDA tools to perform synthesis, floorplanning, placement, CTS, routing, and sign-off.  
 
-![OpenLANE Overview](images/openlane_overview.png)  
+![OpenLANE Overview](Screenshots/openlane_overview.png)  
 
 The **Strive** family of open-source chipsets are built using this exact flow, demonstrating the real-world success of open-source silicon.  
 
@@ -139,24 +138,24 @@ The **Strive** family of open-source chipsets are built using this exact flow, d
 ### 🔹 Introduction to OpenLANE Detailed ASIC Design Flow  
 
 1. **Chip Floorplanning** – Define chip dimensions and pad locations  
-   ![Chip Floorplan](images/chip_floorplan.png)  
+   ![Chip Floorplan](Screenshots/chip_floorplan.png)  
 2. **Macro Floorplanning** – Place large IP blocks  
-   ![Macro Floorplan](images/macro_floorplan.png)  
+   ![Macro Floorplan](Screenshots/macro_floorplan.png)  
 3. **Power Planning** – Distribute power efficiently to avoid IR drop and electromigration  
-   ![Power Planning](images/power_planning.png)  
+   ![Power Planning](Screenshots/power_planning.png)  
 4. **Placement** – Global and detailed cell placements  
-   ![Placement](images/placement.png)  
+   ![Placement](Screenshots/placement.png)  
 5. **Clock Tree Synthesis (CTS)** – Ensure clock signal reaches all components with minimal skew  
-   ![Clock Tree Synthesis](images/cts.png)  
+   ![Clock Tree Synthesis](Screenshots/cts.png)  
 6. **Routing** – Connect all cells; SkyWater PDK uses 6 routing layers  
-   ![Routing](images/routing.png)  
+   ![Routing](Screenshots/routing.png)  
 
 After routing, sign-off checks ensure correctness:  
 - **DRC** (Design Rule Check)  
 - **LVS** (Layout vs Schematic)  
 - **STA** (Static Timing Analysis)  
 
-![Signoff Checks](images/signoff_checks.png)  
+![Signoff Checks](Screenshots/signoff_checks.png)  
 
 ---
 
@@ -165,26 +164,27 @@ After routing, sign-off checks ensure correctness:
 ### 🔹 OpenLANE Directory Structure in Detail  
 Explore folders like `designs/`, `pdks/`, and `flow/` to understand configuration and result storage.  
 
-![OpenLANE Directory](images/openlane_directory.png)  
+![OpenLANE Directory1](Screenshots/openlane_directory.png)  
 
 ### 🔹 Design Preparation Step  
 The design prep step sets up all required files for synthesis and physical design.  
+![OpenLANE Directory2](Screenshots/openlane2.png)  
 
 ### 🔹 Review Files After Design Prep and Run Synthesis  
 After preparation, you can verify generated netlists, logs, and synthesis reports.  
 
+#### Synthesis
+
+
+
 ### 🔹 OpenLANE Project Git Link Description  
 The OpenLANE GitHub repository provides detailed documentation and flow control for all open-source ASIC projects.  
-
+```
+https://github.com/efabless/openlane2
+```
 ### 🔹 Steps to Characterize Synthesis Results  
 Characterization involves analyzing cell timing, area, and power data post-synthesis to verify correctness.  
 
 ---
 
-## 🏁 **Conclusion**  
 
-This session introduced the **foundation of open-source ASIC design** using **OpenLANE** and **Sky130 PDK**.  
-From understanding chip internals and RISC-V architecture to exploring the complete **RTL-to-GDS flow**, it bridges software programming concepts with real-world silicon design.  
-By mastering these open tools, designers can independently create and tape-out ASICs using open-source resources.
-
----
