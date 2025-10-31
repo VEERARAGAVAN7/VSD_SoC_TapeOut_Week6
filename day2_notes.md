@@ -66,12 +66,12 @@ Upper metal layers are used for **power straps** because of their lower resistan
 
 ![Power Planning Grid](Screenshots/power_planning_grid1.png)  
 
-###### problem in the above VDD supply: 
+#### problem in the above VDD supply: 
 Due to single voltage source, it may get weaken due to the resistance,inductance in the circuit. So this leads to inadequate availablity of supply in the input of the cells  
 
 ![Power Planning Grid](Screenshots/power_planning_grid2.png)  
 
-###### SOlution for the above problem:
+#### SOlution for the above problem:
 Providing Mutliple Vdd and Vss tap points reduces the chance of getting above problem
 
 ![Power Planning Grid](Screenshots/power_planning_grid3.png)  
@@ -121,7 +121,7 @@ The above Screenshots explain how vdd and vss line will be facbricated in the ch
 ![Floor Planning](Screenshots/fp3.jpeg)  
 
 
-##### Area of the die can be calucluated :
+#### Area of the die can be calucluated :
 ![Floor Planning](Screenshots/fp_cal.png)  
 
 ### 🔹 Review Floorplan Layout in Magic
@@ -134,17 +134,22 @@ Open the generated layout in Magic VLSI to visualize standard cell regions, pin 
     # Command to load the floorplan def in magic tool
     magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
     ```
-##### The Below Screenshots Ensures the Floorplan impact in the ciruit layout:
+#### The Below Screenshots Ensures the Floorplan impact in the ciruit layout:
 
 Picorv32a :
 ![Floor Planning Magic](Screenshots/fpMagic1.jpeg)  
+
 Equidistance placement of pins
 ![Floor Planning Magic](Screenshots/fpMagic2.jpeg)  
+
 Metal data and it's pin type
 ![Floor Planning Magic](Screenshots/fpMagic4.jpeg)  
+
 ![Floor Planning Magic](Screenshots/fpMagic4.jpeg)  
+
 Equidistance placement of tapcells 
 ![Floor Planning Magic](Screenshots/fpMagic5.jpeg)  
+
 Unplaced standard cells
 ![Floor Planning Magic](Screenshots/fpMagic6.jpeg)  
 
@@ -196,16 +201,18 @@ Command to run placement:
     ```
     
 ![Placement Lab](Screenshots/place1.jpeg)
+
 ![Placement Lab](Screenshots/place2.jpeg)
 
 Load generated placement def in magic tool and explore the placement.
-Commands to load placement def in magic in another terminal
-    ```bash
-    # Change directory to path containing generated placement def
-    cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/placement/
+Commands to load placement def in magic in another terminal.
 
-    # Command to load the placement def in magic tool
-    magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+    ```bash
+        # Change directory to path containing generated placement def
+        cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/placement/
+
+        # Command to load the placement def in magic tool
+        magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
     ```
 ![Placement Lab](Screenshots/place3.jpeg)
 
