@@ -75,7 +75,7 @@ Create and simulate a CMOS inverter standard cell.
 - Performed DC and transient simulation in ngspice
 
 #### 🖼️ Images
-> *(Add your screenshots here)*  
+![Layout](Screenshots/Layout.jpeg)
 - Layout in Magic  
 - Extracted SPICE file  
 - Inverter switching waveform  
